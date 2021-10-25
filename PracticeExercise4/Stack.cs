@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace PracticeExercise4
@@ -18,7 +18,13 @@ namespace PracticeExercise4
 
         public T Peek()
         {
-            throw new NotImplementedException();
+            if (IsEmpty)
+            {
+                throw new EmptyStackException();
+            }
+
+            T topOfStack = linkedList.Last.Value;
+            return topOfStack;
         }
 
         public T Pop()
