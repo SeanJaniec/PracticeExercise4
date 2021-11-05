@@ -4,44 +4,43 @@ namespace PracticeExercise4
 {
     public class Deque<T> : IDeque<T>
     {
-        private Deque<T> deque;
+        private LinkedList<T> deque;
         public Deque()
         {
-            deque = new Deque<T>();
+            deque = new LinkedList<T>();
         }
 
-        public bool IsEmpty => deque.IsEmpty ? true : false;
+        public bool IsEmpty => deque.Count == 0 ? true : false;
 
-        public int Length => deque.Length;
+        public int Length => deque.Count;
 
-        public T Front => deque.Length != 0 ? deque.Front : throw new EmptyQueueException();
+        public T Front => throw new NotImplementedException();
 
-        public T Back => deque.Length != 0 ? deque.Back : throw new EmptyQueueException();
+        public T Back => throw new NotImplementedException();
 
 
 
         public void AddBack(T item)
         {
-            deque.AddBack(item);
+            deque.AddLast(item);
         }
 
         public void AddFront(T item)
         {
-            deque.AddFront(item);
+            deque.AddFirst(item);
         }
 
         public T RemoveBack()
         {
-            
 
-            return deque.RemoveBack();
+            throw new NotImplementedException();
 
 
         }
 
         public T RemoveFront()
         {
-            return deque.RemoveFront();
+            throw new NotImplementedException();
 
         }
     }
