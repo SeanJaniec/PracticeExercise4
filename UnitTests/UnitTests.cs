@@ -548,7 +548,7 @@ namespace UnitTests
 
 
 
-            Assert.AreEqual(1, deque.Front);
+            Assert.AreEqual(2, deque.Front);
 
         }
 

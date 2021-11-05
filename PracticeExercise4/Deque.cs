@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 namespace PracticeExercise4
 {
@@ -42,9 +42,35 @@ namespace PracticeExercise4
 
         public T RemoveFront()
         {
+
+            if(deque.Count == 0)
+            {
+                throw new EmptyQueueException();
+            }
             var removedItem = deque.First.Value;
             deque.RemoveFirst();
             return removedItem;
+
+        }
+
+        public override string ToString()
+        {
+            string result = "<Back> ";
+
+            var currentNode = deque.Last;
+            while (currentNode != null)
+            {
+                result += currentNode.Value;
+                if (currentNode.Previous != null)
+                {
+                    result += " → ";
+                }
+                currentNode = currentNode.Previous;
+            }
+
+            result += " <Front>";
+
+            return result;
 
         }
     }
