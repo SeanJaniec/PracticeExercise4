@@ -14,9 +14,9 @@ namespace PracticeExercise4
 
         public int Length => deque.Count;
 
-        public T Front => throw new NotImplementedException();
+        public T Front => IsEmpty ? throw new EmptyQueueException() : deque.First.Value;
 
-        public T Back => throw new NotImplementedException();
+        public T Back => IsEmpty ? throw new EmptyQueueException() : deque.Last.Value;
 
 
 
@@ -33,14 +33,18 @@ namespace PracticeExercise4
         public T RemoveBack()
         {
 
-            throw new NotImplementedException();
+            var removedItem = deque.Last.Value;
+            deque.RemoveLast();
+            return removedItem;
 
 
         }
 
         public T RemoveFront()
         {
-            throw new NotImplementedException();
+            var removedItem = deque.First.Value;
+            deque.RemoveFirst();
+            return removedItem;
 
         }
     }
